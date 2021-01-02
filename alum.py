@@ -33,12 +33,12 @@ PARTY_REGEX = re.compile(r"Affiliation")
 EDU_REGEX = re.compile(r"Education")
 
 
-def parse_state(races: dict, url: str) -> dict:
+def parse_state(races: dict, url: str) -> None:
     """
     Parses a state for offices on the ballot.
 
     Args:
-        races: Races as {RaceStyle: {URLs}}
+        races: Races as {RaceStyle: {urls}}
         url: Relative URL of Ballotpedia state elections page
     """
 
@@ -110,7 +110,7 @@ def parse_cand(cands: dict, url: str) -> None:
     It also tries to find party affiliation.
 
     Args:
-        cands: Candidates as {url: {"name": name, "races": [races], etc}}
+        cands: Candidates as {url: {"name": name, etc}}
         url: Relative URL of Ballotpedia candidate page
     """
 
